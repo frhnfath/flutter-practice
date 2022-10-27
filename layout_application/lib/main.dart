@@ -8,18 +8,42 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     @override
-    final _biggerFont = TextStyle(fontSize: 30);
+    final ratingSystem = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(Icons.star, color: Colors.green),
+        Icon(Icons.star, color: Colors.green),
+        Icon(Icons.star, color: Colors.green),
+        Icon(Icons.star),
+        Icon(Icons.star)
+      ],
+    );
 
     return MaterialApp(
       title: 'Welcome to Flutter',
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          child: Image.asset('images/gambar.png', width: 500),
-        ),
-      ),
+          appBar: AppBar(
+            title: Text('Welcome to Flutter'),
+          ),
+          body: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    Image.asset('images/gambar.png'),
+                    Center(child: Text("Farhan F")),
+                    ratingSystem
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text('10 Points'),
+                    Text('20 Exp'),
+                    Text('30 Contributes'),
+                  ],
+                )
+              ])),
     );
   }
 }
