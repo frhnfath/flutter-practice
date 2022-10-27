@@ -35,14 +35,17 @@ class MyApp extends StatelessWidget {
                     ratingSystem
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text('10 Points'),
-                    Text('20 Exp'),
-                    Text('30 Contributes'),
-                  ],
-                )
+                Container(
+                    color: Colors.grey,
+                    padding: EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text('10 Points'),
+                        Text('20 Exp'),
+                        Text('30 Contributes'),
+                      ],
+                    ))
               ])),
     );
   }
