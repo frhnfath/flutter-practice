@@ -10,25 +10,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
+        title: 'Welcome to Flutter',
+        home: Scaffold(
           appBar: AppBar(
             title: Text('Welcome to Flutter'),
           ),
-          body: ListView.separated(
-            padding: EdgeInsets.all(10.0),
-            itemCount: items.length,
-            itemBuilder: (BuildContext ctx, int index) {
+          body: GridView.count(
+            padding: EdgeInsets.all(10),
+            mainAxisSpacing: 4,
+            crossAxisSpacing: 4,
+            crossAxisCount: 3,
+            children: List.generate(20, (index) {
               return Container(
-                child: Text('Level ${items[index]}'),
-                height: 100,
-                decoration: BoxDecoration(
-                    border: Border(bottom: BorderSide(color: Colors.grey))),
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) =>
-                const Divider(),
-          )),
-    );
+                  color: Colors.green,
+                  child: Center(child: Text('Level $index')));
+            }),
+          ),
+        ));
   }
 }
