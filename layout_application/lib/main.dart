@@ -12,20 +12,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Welcome to Flutter',
         home: Scaffold(
-          appBar: AppBar(
-            title: Text('Welcome to Flutter'),
-          ),
-          body: GridView.count(
-            padding: EdgeInsets.all(10),
-            mainAxisSpacing: 4,
-            crossAxisSpacing: 4,
-            crossAxisCount: 3,
-            children: List.generate(20, (index) {
-              return Container(
-                  color: Colors.green,
-                  child: Center(child: Text('Level $index')));
-            }),
-          ),
-        ));
+            appBar: AppBar(
+              title: Text('Welcome to Flutter'),
+            ),
+            body: Container(
+                padding: EdgeInsets.all(10),
+                child: Card(
+                    child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    ListTile(
+                        leading: Icon(Icons.people_sharp),
+                        title: Text('Farhan Fathurrahman'),
+                        subtitle: Text('@Frhnfath')),
+                    Text('This is Card', style: TextStyle(fontSize: 40))
+                  ],
+                )))));
   }
 }
