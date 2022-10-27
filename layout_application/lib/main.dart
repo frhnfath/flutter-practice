@@ -7,7 +7,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var name = 'Sekolah Koding';
+    @override
+    final _biggerFont = TextStyle(fontSize: 30);
 
     return MaterialApp(
       title: 'Welcome to Flutter',
@@ -16,16 +17,8 @@ class MyApp extends StatelessWidget {
           title: Text('Welcome to Flutter'),
         ),
         body: Center(
-            child: Text.rich(TextSpan(
-          text: 'Hello',
-          children: <TextSpan>[
-            TextSpan(
-                text: ' beautiful ',
-                style: TextStyle(fontStyle: FontStyle.italic)),
-            TextSpan(
-                text: 'world', style: TextStyle(fontWeight: FontWeight.bold))
-          ],
-        ))),
+          child: Image.asset('images/gambar.png', width: 500),
+        ),
       ),
     );
   }
